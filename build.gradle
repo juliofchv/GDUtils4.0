@@ -12,3 +12,10 @@ repositories {
 dependencies {
     compile fileTree(dir: 'lib', include: '*.jar');
 }
+
+jar {
+    manifest {
+        attributes 'Build-JDK': "${System.properties['java.version']} (${System.properties['java.vendor']} ${System.properties['java.vm.version']})"
+        attributes 'Class-Path': configurations.compile.collect { it.getName() }.join(' ')
+    }
+}
