@@ -1,5 +1,5 @@
 apply plugin: 'java'
-apply plugin: 'jacoco'
+apply plugin: 'java-library'
 apply plugin: 'maven'
 
 
@@ -10,5 +10,5 @@ repositories {
 }
 
 dependencies {
-    testCompile 'junit:junit:4.12'
+    compile fileTree(dir: 'lib', include: '*.jar');
 }
